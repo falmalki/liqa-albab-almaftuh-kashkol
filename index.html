@@ -35,14 +35,19 @@ a{color:var(--accent)}
 .brand{flex:1;line-height:1.2;min-width:0}
 .brand b{display:block;font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand small{display:block;font-size:11px;color:var(--muted)}
-.ib{width:38px;height:38px;border-radius:12px;border:1px solid var(--border);background:var(--card);display:grid;place-items:center;font-size:15px;font-weight:700;padding:0;flex:none}
+.ib{width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--card);display:grid;place-items:center;font-size:16px;font-weight:700;padding:0;flex:none}
+.hist-wrap{position:relative;display:flex}
+.hist-menu{position:absolute;top:48px;inset-inline-end:0;z-index:36;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 24px rgba(44,36,27,.16);padding:6px;min-width:230px;max-height:330px;overflow:auto}
+.hist-menu[hidden]{display:none}
+.hist-menu button{display:block;width:100%;text-align:start;border:0;background:none;padding:10px;border-radius:10px;font-size:13px}
+.hist-menu button:hover,.hist-menu button:focus{background:var(--accent-soft)}
 .ib:active{transform:scale(.96)}
 
 /* tabbar */
 .tabbar{position:fixed;bottom:0;left:0;right:0;z-index:31;background:rgba(251,247,239,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom,0px)}
 .tabbar .in{max-width:820px;margin:auto;display:flex}
-.tabbar button{flex:1;min-height:58px;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--muted);font-size:11px;padding:4px 2px}
-.tabbar button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabbar button{flex:1;min-height:60px;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);font-size:12px;padding:5px 2px}
+.tabbar button svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tabbar button.on{color:var(--accent);font-weight:700}
 
 /* generic */
@@ -52,13 +57,17 @@ h1,h2,h3{margin:0 0 8px;line-height:1.5}
 h1{font-size:24px}h2{font-size:20px}h3{font-size:17px}
 .lead{color:var(--muted);margin:0 0 14px;font-size:15px}
 .small{font-size:13px;color:var(--muted)}
-.pill{display:inline-block;border-radius:999px;padding:6px 14px;border:1px solid var(--border);background:var(--card);font-size:13px;color:var(--ink);min-height:36px}
+.pill{display:inline-block;border-radius:999px;padding:9px 16px;border:1px solid var(--border);background:var(--card);font-size:13px;color:var(--ink);min-height:44px}
 .pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:12px;padding:8px 14px;min-height:40px;font-size:14px;font-weight:600}
+.btn{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:12px;padding:9px 14px;min-height:44px;font-size:14px;font-weight:600}
 .btn.ghost{background:var(--card);color:var(--accent);border-color:var(--border)}
 .btn.ok{background:var(--ok);border-color:var(--ok)}
 .btn.soft{background:var(--accent-soft);color:var(--accent);border-color:transparent}
-.btn.sm{min-height:34px;padding:5px 10px;font-size:13px}
+.btn.export{background:var(--accent-soft);color:var(--accent);border-color:var(--border)}
+.btn.sm{min-height:40px;padding:7px 12px;font-size:13px}
+.ico{display:inline-block;font-size:16px;line-height:1;vertical-align:-2px;margin-inline-end:4px}
+.build{font-size:12px;color:var(--muted)}
+.exp-grid .btn{min-height:46px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin-bottom:12px}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .spread{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
@@ -67,7 +76,7 @@ mark.hl{background:var(--hl-color);color:inherit;border-radius:3px;padding:0 1px
 mark.hl.hl-has-note{border-bottom:2px solid var(--accent)}
 .blur-ans{filter:blur(6px);cursor:pointer;user-select:none}
 .blur-ans.show{filter:none}
-select{max-width:100%;min-width:0;width:auto;height:40px;border:1px solid var(--border);border-radius:12px;background:var(--card);padding:0 10px}
+select{max-width:100%;min-width:0;width:auto;height:44px;border:1px solid var(--border);border-radius:12px;background:var(--card);padding:0 10px}
 input[type=text],input[type=search],input[type=number],textarea{width:100%;max-width:100%;border:1px solid var(--border);border-radius:12px;background:var(--card);padding:9px 12px}
 textarea{resize:vertical}
 .badge-edited{font-size:11px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:1px 8px;margin-inline-start:6px}
@@ -82,6 +91,9 @@ textarea{resize:vertical}
 .banner .loc-line{font-size:12px;color:var(--muted)}
 .rnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
 .rnav select{flex:1;min-width:120px}
+.nav-row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:10px 0}
+.nav-row .btn{min-height:44px}
+.nav-row .mid{flex:1;text-align:center}
 .scard{position:relative}
 .scard .chead{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;border-bottom:1px dashed var(--border);padding-bottom:8px;margin-bottom:10px}
 .scard .ctitles{font-size:12px;color:var(--muted);line-height:1.6}
@@ -142,6 +154,10 @@ mark.rh{background:var(--hl-color);border-radius:3px}
 <body>
 <header class="topbar"><div class="in">
  <div class="brand"><b>كشكول لقاء الباب المفتوح</b><small>للشيخ محمد بن صالح العثيمين · Shamela 7687</small></div>
+ <div class="hist-wrap">
+  <button class="ib" id="histBtn" aria-label="آخر المواضع" title="آخر المواضع">🕘</button>
+  <div class="hist-menu" id="histMenu" hidden></div>
+ </div>
  <button class="ib" id="fsm" aria-label="تصغير الخط">أ−</button>
  <button class="ib" id="fsp" aria-label="تكبير الخط">أ+</button>
 </div></header>
@@ -150,7 +166,6 @@ mark.rh{background:var(--hl-color);border-radius:3px}
  <!-- ============ READ ============ -->
  <section class="view on" id="v-read">
   <div class="pills" id="topicPills"></div>
-  <div class="row" id="histBar" style="margin-bottom:8px"></div>
   <div class="banner">
    <div class="bt" id="bTopic">—</div>
    <div class="bv" id="bTitle">—</div>
@@ -158,13 +173,19 @@ mark.rh{background:var(--hl-color);border-radius:3px}
   </div>
   <div class="rnav">
    <select id="subSel" aria-label="الصفحة"></select>
-   <button class="btn ghost sm" id="locBtn">📍 الموقع</button>
-   <button class="btn ghost sm" id="focusBtn">تركيز</button>
+   <button class="btn ghost" id="locBtn"><span class="ico">📍</span> الموقع</button>
+   <button class="btn ghost" id="focusBtn">تركيز</button>
   </div>
   <div class="returnbar" id="readReturn" hidden>← <button class="lnk" id="backToRead">الرجوع إلى موضع القراءة</button></div>
+  <div class="nav-row">
+   <button class="btn ghost" id="prevSubTop">→ السابق</button>
+   <button class="btn soft mid" id="bmTop">موضعي</button>
+   <button class="btn" id="nextSubTop">التالي ←</button>
+  </div>
   <div id="subCards"></div>
-  <div class="row" style="justify-content:space-between;margin:14px 0">
+  <div class="nav-row">
    <button class="btn ghost" id="prevSub">→ السابق</button>
+   <button class="btn soft mid" id="bmBottom"><span class="ico">★</span> حفظ مكان القراءة</button>
    <button class="btn" id="nextSub">التالي ←</button>
   </div>
   <div id="relatedBox"></div>
@@ -205,6 +226,7 @@ mark.rh{background:var(--hl-color);border-radius:3px}
  <!-- ============ SETTINGS ============ -->
  <section class="view" id="v-settings">
   <h1>الإعدادات</h1>
+  <p class="build">إصدار الكشكول: <b id="buildBadge">—</b></p>
   <div class="card">
    <h3>الخط</h3>
    <select id="fontSel">
@@ -222,13 +244,13 @@ mark.rh{background:var(--hl-color);border-radius:3px}
   </div>
   <div class="card">
    <h3>تصدير ونسخ احتياطي</h3>
-   <div class="row">
-    <button class="btn sm" id="exJson">تصدير JSON</button>
-    <button class="btn ghost sm" id="imJson">استيراد JSON</button>
-    <button class="btn ghost sm" id="imMerge">دمج فوائد من نسخة أخرى</button>
-    <button class="btn ghost sm" id="exMd">تصدير Markdown</button>
-    <button class="btn ghost sm" id="exAnki">تصدير Anki TSV</button>
-    <button class="btn ghost sm" id="exEpub">تصدير EPUB</button>
+   <div class="row exp-grid">
+    <button class="btn" id="exJson"><span class="ico">💾</span> تصدير JSON</button>
+    <button class="btn export" id="imJson"><span class="ico">📥</span> استيراد JSON</button>
+    <button class="btn export" id="imMerge"><span class="ico">🔀</span> دمج فوائد من نسخة أخرى</button>
+    <button class="btn export" id="exMd"><span class="ico">📝</span> تصدير Markdown</button>
+    <button class="btn export" id="exAnki"><span class="ico">🗂️</span> تصدير Anki TSV</button>
+    <button class="btn" id="exEpub"><span class="ico">📚</span> تصدير EPUB</button>
    </div>
    <input type="file" id="jsonFile" accept="application/json,.json" hidden>
    <p class="small">ملف JSON يحمل اسم الكتاب وإصداره، ولا يُقبل استيراد نسخة من كتاب آخر. الفوائد والتعديلات تُحفظ منفصلة عن النص الأصلي.</p>
@@ -247,7 +269,7 @@ mark.rh{background:var(--hl-color);border-radius:3px}
 <button id="toTop" hidden title="أعلى">↑</button>
 <button id="floatingHL" hidden>تظليل المحدد ✎</button>
 <div class="overlay" id="hlSheet" hidden><div class="sheet">
- <div class="ot"><b>تظليل المحدد</b><button class="btn ghost sm" data-close>إغلاق</button></div>
+ <div class="ot"><b>ملاحظة على التظليل</b><button class="btn ghost sm" data-close>إغلاق</button></div>
  <blockquote id="hlQuote"></blockquote>
  <input type="text" id="hlNote" placeholder="ملاحظة على التظليل (اختياري)">
  <div class="row" style="margin-top:10px"><button class="btn" id="hlSave">حفظ</button><button class="btn ghost" id="hlDel">حذف التظليل</button></div>
@@ -419,6 +441,7 @@ window.__BOOK__.push(...[{"id":"b232-14","babn":232,"bab":"لقاء الباب �
 const BOOK = window.__BOOK__ || [];
 BOOK.forEach(c => { c.key = c.topic + '|' + c.babn; });
 const META = { bookId:'liqa-albab-almaftuh', title:'لقاء الباب المفتوح', author:'محمد بن صالح العثيمين', edition:'Shamela 7687 / turath.io' };
+const BUILD = 'v2';
 const KEY = 'liqa-albab-almaftuh-kashkol-v2';
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const AR = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
@@ -545,9 +568,17 @@ function renderSubSel(){
   const list = SUBS.map((S,i)=>({S,i})).filter(x=>x.S.topic===topic);
   $('#subSel').innerHTML = list.map(x=>`<option value="${x.i}" ${x.i===curSub?'selected':''}>${AR(x.i+1)} — ${esc(subLabel(x.i))}</option>`).join('');
 }
+function curCard(){ return (curSid && BOOK.find(x=>x.id===curSid)) || (SUBS[curSub] && SUBS[curSub].cards[0]); }
+function renderHistoryMenu(){
+  const m=$('#histMenu'); if(!m)return;
+  m.innerHTML = state.history.length ? state.history.map(h=>{
+    const c=BYLOC[h.loc];
+    return `<button data-histloc="${h.loc}" data-histsid="${esc(h.sid)}">📍 ${AR(h.loc)} — ${esc(c?c.sec:'')}</button>`;
+  }).join('') : '<p class="small" style="padding:8px;margin:0">لا مواضع بعد.</p>';
+}
 function renderRead(){
   renderTopicPills();
-  $('#histBar').innerHTML = state.history.length ? '<span class="small">آخر المواضع:</span>'+state.history.map(h=>`<button class="pill" data-goloc="${h.loc}" data-sid="${esc(h.sid)}">📍 ${AR(h.loc)}</button>`).join('') : '';
+  renderHistoryMenu();
   const S=SUBS[curSub]; if(!S) return;
   if(S.topic!==topic && !$('#subSel').options.length){ topic=S.topic; }
   renderSubSel();
@@ -556,6 +587,9 @@ function renderRead(){
   $('#bTitle').textContent = subLabel(curSub);
   $('#bLoc').textContent = `${esc(c.bab)} · ${esc(c.sec)} · الموقع ${AR(c.loc)} — صفحة ${AR(curSub+1)} من ${AR(SUBS.length)}`;
   $('#locMax').textContent = AR(BOOK.length);
+  const cc=curCard(), saved=!!(cc&&state.bm[cc.id]);
+  $('#bmTop').textContent = saved?'★ موضعي':'موضعي';
+  $('#bmBottom').innerHTML = `<span class="ico">★</span> ${saved?'موضع محفوظ':'حفظ مكان القراءة'}`;
   const root=$('#subCards');
   root.innerHTML = S.cards.map(c=>renderCard(c)).join('');
   [...root.querySelectorAll('.card-body')].forEach((el,i)=>applyHighlights(el,S.cards[i].id));
@@ -701,6 +735,13 @@ function renderSearch(){
 }
 
 /* ---------- highlights ---------- */
+function addHL(sid,text,note){
+  const arr=state.highs[sid]||(state.highs[sid]=[]);
+  const nt=normalizeAr(text);
+  if(arr.some(h=>normalizeAr(h.text)===nt)) return false;
+  arr.push({id:'h'+Date.now()+Math.random().toString(36).slice(2,6), text, note:note||'', color:state.hlColor});
+  return true;
+}
 function saveSel(){ const s=window.getSelection(); if(!s||s.isCollapsed||!s.rangeCount){ $('#floatingHL').hidden=true; return; }
   const txt=s.toString().trim(); if(txt.length<2){ $('#floatingHL').hidden=true; return; }
   let node=s.anchorNode; while(node&&node.nodeType!==1)node=node.parentElement;
@@ -708,19 +749,40 @@ function saveSel(){ const s=window.getSelection(); if(!s||s.isCollapsed||!s.rang
   lastHL={text:txt, sid:card.id.replace(/^card-/,'')}; $('#floatingHL').hidden=false;
 }
 document.addEventListener('selectionchange',()=>setTimeout(saveSel,60));
+/* tapping the floating button applies the highlight immediately, with no note dialog */
 $('#floatingHL').onclick=()=>{
-  if(!lastHL)return; $('#floatingHL').hidden=true; hlMode='add';
-  $('#hlQuote').textContent=lastHL.text.slice(0,240); $('#hlNote').value=''; $('#hlSheet').hidden=false;
+  if(!lastHL)return;
+  const y=window.scrollY;
+  $('#floatingHL').hidden=true;
+  addHL(lastHL.sid,lastHL.text,'');
+  save(); renderRead();
+  setTimeout(()=>{ window.scrollTo({top:y,behavior:'instant'}); requestAnimationFrame(()=>window.scrollTo({top:y,behavior:'instant'})); },50);
 };
+/* notes are added or edited later by clicking the rendered mark */
+let editHid=null, editSid=null;
+document.addEventListener('click',e=>{
+  const mk=e.target.closest('mark.hl');
+  if(!mk||!mk.dataset.hid)return;
+  const card=mk.closest('.scard'); if(!card)return;
+  e.stopPropagation();
+  const sid=card.id.replace(/^card-/,'');
+  const h=(state.highs[sid]||[]).find(x=>x.id===mk.dataset.hid);
+  if(!h)return;
+  editSid=sid; editHid=h.id;
+  $('#hlQuote').textContent=h.text.slice(0,240); $('#hlNote').value=h.note||'';
+  $('#hlSheet').hidden=false;
+},true);
 $('#hlSave').onclick=()=>{
-  if(!lastHL)return; const arr=state.highs[lastHL.sid]||(state.highs[lastHL.sid]=[]);
   const note=$('#hlNote').value.trim();
-  const h={id:'h'+Date.now()+Math.random().toString(36).slice(2,6), text:lastHL.text, note, color:state.hlColor};
-  arr.push(h); save(); $('#hlSheet').hidden=true; renderRead(); showErr('تم حفظ التظليل.');
+  if(editHid&&editSid){ const h=(state.highs[editSid]||[]).find(x=>x.id===editHid); if(h)h.note=note; }
+  else if(lastHL){ addHL(lastHL.sid,lastHL.text,note); }
+  editHid=null; editSid=null; lastHL=null;
+  save(); $('#hlSheet').hidden=true; renderRead();
 };
 $('#hlDel').onclick=()=>{
-  if(!lastHL)return; const arr=state.highs[lastHL.sid]||[];
-  state.highs[lastHL.sid]=arr.filter(h=>normalizeAr(h.text)!==normalizeAr(lastHL.text));
+  if(editHid&&editSid){ state.highs[editSid]=(state.highs[editSid]||[]).filter(h=>h.id!==editHid); }
+  else if(lastHL){ state.highs[lastHL.sid]=(state.highs[lastHL.sid]||[]).filter(h=>normalizeAr(h.text)!==normalizeAr(lastHL.text)); }
+  editHid=null; editSid=null; lastHL=null;
   save(); $('#hlSheet').hidden=true; renderRead();
 };
 
@@ -755,7 +817,17 @@ $$('.tabbar button').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
 $('#topicPills').onclick=e=>{const b=e.target.closest('[data-topic]');if(b){topic=b.dataset.topic;const i=SUBS.findIndex(S=>S.topic===topic);if(i>=0)gotoSub(i);}};
 $('#subSel').onchange=e=>gotoSub(+e.target.value);
 $('#prevSub').onclick=()=>gotoSub(curSub-1);
-$('#nextSub').onclick=()=>{ const done=SUBS[curSub].cards.every(c=>state.readCards[c.id]); if(done)state.pathsDone[0]=state.pathsDone[0]; gotoSub(curSub+1); };
+$('#nextSub').onclick=()=>gotoSub(curSub+1);
+$('#prevSubTop').onclick=()=>gotoSub(curSub-1);
+$('#nextSubTop').onclick=()=>gotoSub(curSub+1);
+const toggleBm=()=>{ const c=curCard(); if(!c)return; if(state.bm[c.id])delete state.bm[c.id]; else state.bm[c.id]=1; save(); renderRead(); };
+$('#bmTop').onclick=toggleBm; $('#bmBottom').onclick=toggleBm;
+$('#histBtn').onclick=e=>{ e.stopPropagation(); const m=$('#histMenu'); m.hidden=!m.hidden; if(!m.hidden)renderHistoryMenu(); };
+document.addEventListener('click',e=>{
+  const r=e.target.closest('[data-histloc]');
+  if(r){ const loc=+r.dataset.histloc, sid=r.dataset.histsid; $('#histMenu').hidden=true; gotoLoc(loc,sid); return; }
+  if(!e.target.closest('.hist-wrap')) $('#histMenu').hidden=true;
+});
 $('#focusBtn').onclick=()=>{ state.focus=!state.focus; $('#subCards').classList.toggle('focus-mode',state.focus); $('#focusBtn').textContent=state.focus?'إظهار الأدوات':'تركيز'; save(); };
 $('#locBtn').onclick=()=>{ $('#locNum').value=SUBS[curSub].cards[0].loc; $('#locSheet').hidden=false; };
 $('#locGo').onclick=()=>{ const n=+$('#locNum').value; if(n>=1&&n<=BOOK.length){ gotoLoc(n); $('#locSheet').hidden=true; } };
@@ -821,21 +893,59 @@ $('#exEpub').onclick=()=>{
   const enc=new TextEncoder(), files=[];
   files.push({name:'mimetype',data:enc.encode('application/epub+zip')});
   files.push({name:'META-INF/container.xml',data:`<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>`});
-  const topics=[...new Set(BOOK.map(c=>c.topic))];
-  let manifest='', spine='';
-  topics.forEach((t,i)=>{ manifest+=`<item id="c${i}" href="c${i}.xhtml" media-type="application/xhtml+xml"/>`; spine+=`<itemref idref="c${i}"/>`; });
-  files.push({name:'OEBPS/content.opf',data:`<?xml version="1.0"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="bid">${META.bookId}</dc:identifier><dc:title>${esc(META.title)}</dc:title><dc:creator>${esc(META.author)}</dc:creator><dc:language>ar</dc:language></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>${manifest}</manifest><spine>${spine}</spine></package>`});
-  let nav='<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" dir="rtl"><body><nav epub:type="toc"><ol>';
-  topics.forEach((t,i)=>nav+=`<li><a href="c${i}.xhtml">${esc(t)}</a></li>`); nav+='</ol></nav></body></html>';
+  const css=`@charset "utf-8";body{font-family:Amiri,Scheherazade New,serif!important;font-weight:700!important;line-height:1.9}.prose{text-align:justify!important;text-align-last:right!important;width:100%;font-weight:700!important}.blockgap{height:.55em;line-height:.55em}h2,h3{font-weight:700!important}blockquote{font-weight:700!important}`;
+  files.push({name:'OEBPS/style.css',data:css});
+  let secN=0;
+  const groups=[...new Set(BOOK.map(c=>c.topic))].map(t=>{
+    const secs=[];
+    BOOK.filter(c=>c.topic===t).forEach(c=>{
+      const name=c.bab+' — '+c.sec;
+      let s=secs.find(x=>x.name===name);
+      if(!s){ s={name, id:'p'+(++secN), cards:[]}; secs.push(s); }
+      s.cards.push(c);
+    });
+    return {t, secs};
+  });
+  const allSecs=groups.flatMap(g=>g.secs.map(s=>({...s, topic:g.t})));
+  let manifest='<item id="idx" href="idx.xhtml" media-type="application/xhtml+xml"/><item id="css" href="style.css" media-type="text/css"/>';
+  let spine='<itemref idref="idx"/>';
+  groups.forEach((g,i)=>{ manifest+=`<item id="c${i}" href="c${i}.xhtml" media-type="application/xhtml+xml"/>`; spine+=`<itemref idref="c${i}"/>`; });
+  files.push({name:'OEBPS/content.opf',data:`<?xml version="1.0"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="bid">${META.bookId}</dc:identifier><dc:title>${esc(META.title)}</dc:title><dc:creator>${esc(META.author)}</dc:creator><dc:language>ar</dc:language><meta property="dcterms:modified">${new Date().toISOString()}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>${manifest}</manifest><spine>${spine}</spine></package>`});
+  /* hierarchical nav: one outer ol, a nested ol per topic; index chapter first */
+  let nav='<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" dir="rtl"><head><meta charset="utf-8"/><title>المحتويات</title></head><body><nav epub:type="toc" id="toc"><h1>المحتويات</h1><ol>';
+  nav+='<li><a href="idx.xhtml">فهرس اللقاءات</a></li>';
+  groups.forEach((g,i)=>{ nav+=`<li>${esc(g.t)}<ol>`; g.secs.forEach(s=>nav+=`<li><a href="c${i}.xhtml#${s.id}">${esc(s.name)}</a></li>`); nav+='</ol></li>'; });
+  nav+='</ol></nav></body></html>';
   files.push({name:'OEBPS/nav.xhtml',data:nav});
-  topics.forEach((t,i)=>{
-    let x='<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" dir="rtl"><head><meta charset="utf-8"/><title>'+esc(t)+'</title></head><body><h1>'+esc(t)+'</h1>';
-    BOOK.filter(c=>c.topic===t).forEach(c=>{ const b=state.benefits[c.id]; x+=`<h2>${esc(c.title)}</h2><p class="small">${esc(c.bab)} · الموقع ${AR(c.loc)} · ص ${AR(c.page)} · ${esc((c.tags||[]).join('، '))}</p><div>${esc(textOf(c)).replace(/\n/g,'<br/>')}</div>`; if(b)x+=`<blockquote>فائدتي: ${esc(b)}</blockquote>`; });
+  /* index chapter: a real ol of links, no location labels, no emoji */
+  let ix='<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" dir="rtl"><head><meta charset="utf-8"/><title>فهرس اللقاءات</title><link rel="stylesheet" href="style.css"/></head><body><h1>فهرس اللقاءات</h1><ol>';
+  groups.forEach((g,i)=>g.secs.forEach(s=>ix+=`<li><a href="c${i}.xhtml#${s.id}">${esc(s.name)}</a></li>`));
+  ix+='</ol></body></html>';
+  files.push({name:'OEBPS/idx.xhtml',data:ix});
+  groups.forEach((g,i)=>{
+    let x=`<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" dir="rtl"><head><meta charset="utf-8"/><title>${esc(g.t)}</title><link rel="stylesheet" href="style.css"/></head><body><h1>${esc(g.t)}</h1>`;
+    g.secs.forEach(s=>{
+      x+=`<h2 id="${s.id}">${esc(s.name)}</h2>`;
+      s.cards.forEach(c=>{
+        const b=state.benefits[c.id];
+        const hs=(state.highs[c.id]||[]).filter(h=>h.note);
+        x+=`<div id="loc-${c.loc}"><h3>${esc(c.title)}</h3>`;
+        String(textOf(c)).split('\n').map(l=>l.trim()==='<s0>'?'السؤال:':l.trim()==='<s1>'?'الجواب:':l.trim()).filter(Boolean).forEach(l=>{
+          x+=`<div dir="rtl" align="right" class="prose" style="direction:rtl;text-align:justify !important;text-align-last:right !important;width:100%">${esc(l)}</div>`;
+        });
+        if(b)x+=`<blockquote dir="rtl" align="right" class="prose" style="direction:rtl;text-align:right !important;width:100%">فائدتي: ${esc(b)}</blockquote>`;
+        hs.forEach(h=>x+=`<blockquote dir="rtl" align="right" class="prose" style="direction:rtl;text-align:right !important;width:100%">ملاحظة على التظليل: ${esc(h.note)}</blockquote>`);
+        x+='<div class="blockgap" style="height:.55em;line-height:.55em">&#160;</div>';
+        x+='<hr style="border:0;border-top:1px solid #ccc"/>';
+        x+='</div>';
+      });
+    });
     x+='</body></html>'; files.push({name:`OEBPS/c${i}.xhtml`,data:x});
   });
   const zip=makeZip(files);
-  if(zip[0]!==0x50||zip[1]!==0x4b) { showErr('تعذّر إنشاء ملف EPUB.'); return; }
-  dl(`kashkol-${stamp()}.epub`,zip,'application/epub+zip');
+  if(zip[0]!==0x50||zip[1]!==0x4b||files.length<9){ showErr('تعذّر إنشاء ملف EPUB.'); return; }
+  dl(`kashkol-liqa-${BUILD}-${stamp()}.epub`,zip,'application/epub+zip');
+  showErr(`تم تصدير EPUB (${BUILD}): ${AR(files.length)} ملفًا، ${AR(allSecs.length)} قسمًا.`);
 };
 $('#imJson').onclick=()=>{ $('#importSheet').hidden=false; $('#impMsg').textContent=''; };
 $('#imMerge').onclick=()=>{ $('#importSheet').hidden=false; $('#impMsg').textContent='سيُدمج فقط: الفوائد، المختارات، الحفظ، التعديلات، التظليل، العلامات — دون الإعدادات أو موضع القراءة.'; };
@@ -874,6 +984,7 @@ $('#focusBtn').textContent=state.focus?'إظهار الأدوات':'تركيز';
 if(state.focus)$('#subCards').classList.add('focus-mode');
 $('#hideAns').textContent=state.hideAns?'👁️ إظهار الجواب':'🙈 إخفاء الجواب للاستظهار';
 renderSwatches();
+$('#buildBadge').textContent = BUILD;
 curSub = Math.min(Math.max(0,state.page|0), SUBS.length-1);
 renderRead();
 renderStats();
